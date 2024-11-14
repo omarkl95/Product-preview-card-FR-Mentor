@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="perfume" content="Product preview card component" />
+    <meta name="keywords" content="Gabrielle, Parfum" />
+    <meta
+      name="description"
+      content="Gabrielle Essence Eau De Parfum, Price: $149.99, A floral, solar and voluptuous interpretation composed by Olivier
+      Polge, Perfumer-Creator for the House of CHANEL. "
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Product preview card component</title>
+
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      * {
+        margin: 0;
+      }
+      :root {
+        --primary-green: hsl(158, 36%, 37%);
+        --primary-body: hsl(30, 38%, 92%);
+        --primary-green-bold: hsl(158, 42%, 18%);
+
+        --secondary-one: hsl(212, 21%, 14%);
+        --secondary-two: hsl(228, 12%, 48%);
+        --secondary-three: hsl(0, 0%, 100%);
+
+        --font-main: Montserrat;
+        --font-secondary: Fraunces;
+      }
+      body {
+        background-color: var(--primary-body);
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+        max-width: 37.5rem;
+        margin-inline: auto;
+        min-height: 100svh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+      img,
+      picture,
+      video,
+      canvas,
+      svg {
+        display: block;
+        max-width: 100%;
+      }
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        overflow-wrap: break-word;
+      }
+      input,
+      button,
+      textarea,
+      select {
+        font: inherit;
+      }
+      .card__info {
+        border-radius: 0 0 10px 10px;
+        padding: 1.5rem;
+        background-color: var(--secondary-three);
+      }
+      .card__item {
+        text-transform: uppercase;
+        font-family: var(--font-main);
+        font-size: 0.75rem;
+        color: var(--secondary-two);
+        letter-spacing: 0.313rem;
+      }
+      .card__product {
+        font-size: 2rem;
+        font-family: var(--font-secondary);
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--secondary-one);
+        line-height: 1;
+      }
+      .card__product-desc {
+        font-family: var(--font-main);
+        font-size: 0.875rem;
+        color: var(--secondary-two);
+        line-height: 1.64;
+        margin-bottom: 1.5rem;
+      }
+      .card__price {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.25rem;
+      }
+      .card__actual-price {
+        font-family: var(--font-secondary);
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--primary-green);
+        line-height: 1;
+        margin-right: 1.188rem;
+      }
+      .card__old-price {
+        font-family: var(--font-main);
+        font-size: 0.813rem;
+        color: var(--secondary-two);
+      }
+      .card__button {
+        background-color: var(--primary-green);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 3rem;
+        font-family: var(--font-main);
+        font-weight: 700;
+        font-size: 0.875rem;
+        color: var(--secondary-three);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .card__cart-img {
+        margin-right: 0.726rem;
+      }
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+
+      @media only screen and (min-width: 37.5rem) {
+        .card {
+          display: flex;
+          padding: 1.75rem 1rem;
+        }
+        .card__img {
+          border-radius: 10px 0 0 10px;
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+          aspect-ratio: 2 / 3;
+        }
+        .card__info {
+          border-radius: 0 10px 10px 0;
+          padding: 2rem;
+          width: 100%;
+        }
+        .card__item {
+          margin-bottom: 1.25rem;
+        }
+        .card__product {
+          margin-bottom: 1.5rem;
+        }
+        .card__product-desc {
+          margin-bottom: 1.813rem;
+        }
+        .card__price {
+          margin-bottom: 1.875rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="card">
+        <picture>
+          <source
+            srcset="./images/image-product-mobile.jpg"
+            media="(max-width:600px)"
+          />
+          <source
+            srcset="./images/image-product-desktop.jpg"
+            media="(min-width: 601px)"
+          />
+          <img
+            class="card__img"
+            src="./images/image-product-desktop.jpg"
+            alt="Gabrielle Essence Eau De Parfum"
+          />
+          <source />
+        </picture>
+        <div class="card__info">
+          <p class="card__item">perfume</p>
+          <h1 class="card__product">Gabrielle Essence Eau De Parfum</h1>
+          <p class="card__product-desc">
+            A floral, solar and voluptuous interpretation composed by Olivier
+            Polge, Perfumer-Creator for the House of CHANEL.
+          </p>
+          <div class="card__price">
+            <p class="card__actual-price">$149.99</p>
+            <s class="card__old-price">$169.99</s>
+          </div>
+          <button class="card__button">
+            <img class="card__cart-img" src="./images/icon-cart.svg" alt="" />
+            <span class="card__cart">Add to Cart</span>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Omar Kamal</a>.
+    </div>
+  </body>
+</html>
